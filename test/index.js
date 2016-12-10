@@ -42,7 +42,23 @@ describe('OfflineProvider', () => {
         const name = OfflineProvider.getName();
 
         should(name).be.a.string;
-        should(name).equal('offline');
+        should(name).not.containEql('.');
+      });
+    });
+  });
+
+  describe('#getConfigPrefix', () => {
+    it('should be defined and be a function', () => {
+      should(OfflineProvider.getConfigPrefix).not.be.null;
+      should(OfflineProvider.getConfigPrefix).be.a.Function;
+    });
+
+    describe('#getConfigPrefix()', () => {
+      it('should be sync return a string', () => {
+        const name = OfflineProvider.getConfigPrefix();
+
+        should(name).be.a.string;
+        should(name).startWith('providers.');
       });
     });
   });

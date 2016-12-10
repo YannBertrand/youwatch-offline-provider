@@ -7,6 +7,7 @@ module.exports = (() => {
   let folder;
 
   function getName() { return 'offline'; }
+  function getConfigPrefix() { return 'providers.' + getName() }
 
   function init(callback, options) {
     utils.testCallback(callback);
@@ -16,13 +17,13 @@ module.exports = (() => {
     utils.returnCallbackError(utils.testFunction('options.config.set', options.config.set));
     utils.returnCallbackError(utils.testFunction('options.app', options.app.getPath));
 
-    if (!options.config.has(getName())) {
-      options.config.set(getName(), {
+    if (!options.config.has(getConfigPrefix())) {
+      options.config.set(getConfigPrefix(), {
         folder: options.app.getPath('videos'),
       });
     }
 
-    folder = options.config.get(getName() + '.folder');
+    folder = options.config.get(getConfigPrefix() + '.folder');
 
     return callback();
   }
@@ -78,6 +79,7 @@ module.exports = (() => {
 
   return {
     getName,
+    getConfigPrefix,
     init,
     refreshSubscriptions,
     refreshVideos,
