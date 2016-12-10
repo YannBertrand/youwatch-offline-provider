@@ -9,6 +9,22 @@ describe('OfflineProvider', () => {
     should(OfflineProvider).not.be.null;
   });
 
+  describe('#getName', () => {
+    it('should be defined and be a function', () => {
+      should(OfflineProvider.getName).not.be.null;
+      should(OfflineProvider.getName).be.a.Function;
+    });
+
+    describe('#getName()', () => {
+      it('should be sync return a string', () => {
+        const name = OfflineProvider.getName();
+
+        should(name).be.a.string;
+        should(name).equal('offline');
+      });
+    });
+  });
+
   describe('#init', () => {
     it('should be defined and be a function', () => {
       should(OfflineProvider.init).not.be.null;

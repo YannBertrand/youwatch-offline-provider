@@ -6,6 +6,8 @@ module.exports = (() => {
 
   let folder;
 
+  function getName() { return 'offline'; }
+
   function init(callback, options) {
     utils.testCallback(callback);
     utils.returnCallbackError(utils.testObject('options', options));
@@ -65,6 +67,7 @@ module.exports = (() => {
   }
 
   return {
+    getName,
     init,
     refreshSubscriptions,
     refreshVideos,
