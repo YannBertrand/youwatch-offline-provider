@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const utils = require('./utils');
 
 module.exports = (() => {
@@ -30,7 +32,21 @@ module.exports = (() => {
     utils.testCallback(callback);
     utils.returnCallbackError(utils.testOptionalObject('channel', channel));
 
-    return callback(null, []);
+    fs.readdir(folder, (err, files) => {
+      if (err) {
+        return callback(err);
+      }
+
+      const videos = [];
+
+      files.forEach(file => {
+        videos.push({
+          file
+        });
+      });
+
+      return callback(null, videos);
+    });
   }
 
   function getOlderVideos(callback, video) {

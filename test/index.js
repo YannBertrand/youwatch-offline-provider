@@ -119,9 +119,38 @@ describe('OfflineProvider', () => {
     });
 
     describe('#getVideos(callback)', () => {
-      it('should call the callback', (done) => {
-        OfflineProvider.getVideos((err) => {
+      before((done) => {
+        OfflineProvider.init((err) => {
           should(err).be.undefined;
+          done();
+        }, { folder: path.join(__dirname, 'fixtures/empty') });
+      });
+
+      it('should return an empty array', (done) => {
+        OfflineProvider.getVideos((err, videos) => {
+          should(err).be.undefined;
+          should(videos).be.an.array;
+          should(videos).be.empty;
+
+          done();
+        });
+      });
+    });
+
+    describe('#getVideos(callback)', () => {
+      before((done) => {
+        OfflineProvider.init((err) => {
+          should(err).be.undefined;
+          done();
+        }, { folder: path.join(__dirname, 'fixtures/videos') });
+      });
+
+      it('should return an array of 3 videos', (done) => {
+        OfflineProvider.getVideos((err, videos) => {
+          should(err).be.undefined;
+          should(videos).be.an.array;
+          should(videos).have.lengthOf(3);
+
           done();
         });
       });
