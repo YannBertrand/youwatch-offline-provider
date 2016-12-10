@@ -1,4 +1,5 @@
 const should = require('should');
+const path = require('path');
 
 const OfflineProvider = require('../src/index');
 
@@ -20,11 +21,11 @@ describe('OfflineProvider', () => {
       });
     });
 
-    describe('#init(callback, config)', () => {
+    describe('#init(callback, options)', () => {
       it('should call the callback when arguments are present', (done) => {
-        const config = { get: () => {}, set: () => {} };
+        const options = { folder: path.join(__dirname, 'fixtures', 'videos') };
 
-        OfflineProvider.init(done, config);
+        OfflineProvider.init(done, options);
       });
     });
   });
