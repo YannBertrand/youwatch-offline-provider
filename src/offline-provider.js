@@ -2,13 +2,13 @@ const utils = require('./utils');
 
 module.exports = (() => {
 
-  let config;
+  let folder;
 
-  function init(callback, _config) {
+  function init(callback, options) {
     utils.testCallback(callback);
-    utils.returnCallbackError(utils.testObject('config', _config));
+    utils.returnCallbackError(utils.testObject('options', options));
 
-    config = _config;
+    folder = options.folder || require('path').join(__dirname, 'YouWatch');
 
     return callback();
   }
