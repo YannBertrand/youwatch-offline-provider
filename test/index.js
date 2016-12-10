@@ -118,7 +118,7 @@ describe('OfflineProvider', () => {
       });
     });
 
-    describe('#getVideos(callback)', () => {
+    describe('#getVideos(callback) with test/fixtures/empty folder', () => {
       before((done) => {
         OfflineProvider.init((err) => {
           should(err).be.undefined;
@@ -137,7 +137,7 @@ describe('OfflineProvider', () => {
       });
     });
 
-    describe('#getVideos(callback)', () => {
+    describe('#getVideos(callback) with test/fixtures/videos folder', () => {
       before((done) => {
         OfflineProvider.init((err) => {
           should(err).be.undefined;
@@ -156,12 +156,43 @@ describe('OfflineProvider', () => {
       });
     });
 
-    describe('#getVideos(callback, channel)', () => {
-      it('should accept an optional channel parameter', (done) => {
+    describe('#getVideos(callback, channel) with test/fixtures/empty folder', () => {
+      before((done) => {
+        OfflineProvider.init((err) => {
+          should(err).be.undefined;
+          done();
+        }, { folder: path.join(__dirname, 'fixtures/empty') });
+      });
+
+      it('should return an empty array', (done) => {
         const channel = { id: 1 };
 
         OfflineProvider.getVideos((err) => {
           should(err).be.undefined;
+          should(videos).be.an.array;
+          should(videos).be.empty;
+
+          done();
+        }, channel);
+      });
+    });
+
+    describe('#getVideos(callback, channel) with test/fixtures/videos folder', () => {
+      before((done) => {
+        OfflineProvider.init((err) => {
+          should(err).be.undefined;
+          done();
+        }, { folder: path.join(__dirname, 'fixtures/empty') });
+      });
+
+      it('should not care about the channel param', (done) => {
+        const channel = { id: 1 };
+
+        OfflineProvider.getVideos((err) => {
+          should(err).be.undefined;
+          should(videos).be.an.array;
+          should(videos).have.lengthOf(3);
+
           done();
         }, channel);
       });
