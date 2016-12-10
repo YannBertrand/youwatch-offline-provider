@@ -11,11 +11,9 @@ module.exports = (() => {
   function init(callback, options) {
     utils.testCallback(callback);
     utils.returnCallbackError(utils.testObject('options', options));
-    utils.returnCallbackError(utils.testObject('options.config', options.config));
     utils.returnCallbackError(utils.testFunction('options.config.has', options.config.has));
     utils.returnCallbackError(utils.testFunction('options.config.get', options.config.get));
     utils.returnCallbackError(utils.testFunction('options.config.set', options.config.set));
-    utils.returnCallbackError(utils.testObject('options.app', options.app));
     utils.returnCallbackError(utils.testFunction('options.app', options.app.getPath));
 
     if (!options.config.has(getName())) {
