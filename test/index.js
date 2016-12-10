@@ -167,7 +167,7 @@ describe('OfflineProvider', () => {
       it('should return an empty array', (done) => {
         const channel = { id: 1 };
 
-        OfflineProvider.getVideos((err) => {
+        OfflineProvider.getVideos((err, videos) => {
           should(err).be.undefined;
           should(videos).be.an.array;
           should(videos).be.empty;
@@ -182,13 +182,13 @@ describe('OfflineProvider', () => {
         OfflineProvider.init((err) => {
           should(err).be.undefined;
           done();
-        }, { folder: path.join(__dirname, 'fixtures/empty') });
+        }, { folder: path.join(__dirname, 'fixtures/videos') });
       });
 
       it('should not care about the channel param', (done) => {
         const channel = { id: 1 };
 
-        OfflineProvider.getVideos((err) => {
+        OfflineProvider.getVideos((err, videos) => {
           should(err).be.undefined;
           should(videos).be.an.array;
           should(videos).have.lengthOf(3);
