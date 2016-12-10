@@ -1,1 +1,1 @@
-module.exports = require('./boilerplate-provider');
+module.exports = require('./offline-provider');
