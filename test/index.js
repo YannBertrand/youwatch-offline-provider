@@ -3,6 +3,28 @@ const path = require('path');
 
 const OfflineProvider = require('../src/index');
 
+const emptyFolderOptions = {
+  config: {
+    has: () => {},
+    set: () => {},
+    get: () => { return path.join(__dirname, 'fixtures', 'empty') },
+  },
+  app: {
+    getPath: () => {},
+  },
+};
+
+const videoFolderOptions = {
+  config: {
+    has: () => {},
+    set: () => {},
+    get: () => { return path.join(__dirname, 'fixtures', 'videos') },
+  },
+  app: {
+    getPath: () => {},
+  },
+};
+
 describe('OfflineProvider', () => {
 
   it('should exists', () => {
@@ -39,9 +61,7 @@ describe('OfflineProvider', () => {
 
     describe('#init(callback, options)', () => {
       it('should call the callback when arguments are present', (done) => {
-        const options = { folder: path.join(__dirname, 'fixtures', 'videos') };
-
-        OfflineProvider.init(done, options);
+        OfflineProvider.init(done, emptyFolderOptions);
       });
     });
   });
@@ -139,7 +159,7 @@ describe('OfflineProvider', () => {
         OfflineProvider.init((err) => {
           should(err).be.undefined;
           done();
-        }, { folder: path.join(__dirname, 'fixtures/empty') });
+        }, emptyFolderOptions);
       });
 
       it('should return an empty array', (done) => {
@@ -158,7 +178,7 @@ describe('OfflineProvider', () => {
         OfflineProvider.init((err) => {
           should(err).be.undefined;
           done();
-        }, { folder: path.join(__dirname, 'fixtures/videos') });
+        }, videoFolderOptions);
       });
 
       it('should return an array of 3 videos', (done) => {
@@ -177,7 +197,7 @@ describe('OfflineProvider', () => {
         OfflineProvider.init((err) => {
           should(err).be.undefined;
           done();
-        }, { folder: path.join(__dirname, 'fixtures/empty') });
+        }, emptyFolderOptions);
       });
 
       it('should return an empty array', (done) => {
@@ -198,7 +218,7 @@ describe('OfflineProvider', () => {
         OfflineProvider.init((err) => {
           should(err).be.undefined;
           done();
-        }, { folder: path.join(__dirname, 'fixtures/videos') });
+        }, videoFolderOptions);
       });
 
       it('should not care about the channel param', (done) => {
