@@ -28,12 +28,12 @@ const videoFolderOptions = {
 describe('OfflineProvider', () => {
 
   it('should exists', () => {
-    should(OfflineProvider).not.be.null;
+    should.exist(OfflineProvider);
   });
 
   describe('#getName', () => {
     it('should be defined and be a function', () => {
-      should(OfflineProvider.getName).not.be.null;
+      should.exist(OfflineProvider.getName);
       should(OfflineProvider.getName).be.a.Function();
     });
 
@@ -49,7 +49,7 @@ describe('OfflineProvider', () => {
 
   describe('#getConfigPrefix', () => {
     it('should be defined and be a function', () => {
-      should(OfflineProvider.getConfigPrefix).not.be.null;
+      should.exist(OfflineProvider.getConfigPrefix);
       should(OfflineProvider.getConfigPrefix).be.a.Function();
     });
 
@@ -65,7 +65,7 @@ describe('OfflineProvider', () => {
 
   describe('#init', () => {
     it('should be defined and be a function', () => {
-      should(OfflineProvider.init).not.be.null;
+      should.exist(OfflineProvider.init);
       should(OfflineProvider.init).be.a.Function();
     });
 
@@ -84,7 +84,7 @@ describe('OfflineProvider', () => {
 
   describe('#refreshSubscriptions', () => {
     it('should be defined and be a function', () => {
-      should(OfflineProvider.refreshSubscriptions).not.be.null;
+      should.exist(OfflineProvider.refreshSubscriptions);
       should(OfflineProvider.refreshSubscriptions).be.a.Function();
     });
 
@@ -106,7 +106,7 @@ describe('OfflineProvider', () => {
 
   describe('#refreshVideos', () => {
     it('should be defined and be a function', () => {
-      should(OfflineProvider.refreshVideos).not.be.null;
+      should.exist(OfflineProvider.refreshVideos);
       should(OfflineProvider.refreshVideos).be.a.Function();
     });
 
@@ -128,7 +128,7 @@ describe('OfflineProvider', () => {
 
   describe('#refreshVideos', () => {
     it('should be defined and be a function', () => {
-      should(OfflineProvider.refreshVideos).not.be.null;
+      should.exist(OfflineProvider.refreshVideos);
       should(OfflineProvider.refreshVideos).be.a.Function();
     });
 
@@ -160,7 +160,7 @@ describe('OfflineProvider', () => {
 
   describe('#getVideos', () => {
     it('should be defined and be a function', () => {
-      should(OfflineProvider.getVideos).not.be.null;
+      should.exist(OfflineProvider.getVideos);
       should(OfflineProvider.getVideos).be.a.Function();
     });
 
@@ -253,7 +253,7 @@ describe('OfflineProvider', () => {
 
   describe('#getOlderVideos', () => {
     it('should be defined and be a function', () => {
-      should(OfflineProvider.getOlderVideos).not.be.null;
+      should.exist(OfflineProvider.getOlderVideos);
       should(OfflineProvider.getOlderVideos).be.a.Function();
     });
 
@@ -286,7 +286,7 @@ describe('OfflineProvider', () => {
 
   describe('#videoProgress', () => {
     it('should be defined and be a function', () => {
-      should(OfflineProvider.videoProgress).not.be.null;
+      should.exist(OfflineProvider.videoProgress);
       should(OfflineProvider.videoProgress).be.a.Function();
     });
 
