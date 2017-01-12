@@ -299,7 +299,7 @@ describe('OfflineProvider', () => {
     describe('#videoProgress(callback)', () => {
       it('should throw an error if video or time are not passed', () => {
         const callback = (err) => {
-          should(err).exists;
+          should.exist(err);
           done();
         };
         const video = { id: 1 };
