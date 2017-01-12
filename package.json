@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YannBertrand/youwatch-offline-provider.git"
+    "url": "git+https://github.com/yannbertrand/youwatch-offline-provider.git"
   },
   "keywords": [
     "youwatch",
@@ -18,9 +18,9 @@
   "author": "Yann Bertrand <github@yann-bertrand.fr>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/YannBertrand/youwatch-offline-provider/issues"
+    "url": "https://github.com/yannbertrand/youwatch-offline-provider/issues"
   },
-  "homepage": "https://github.com/YannBertrand/youwatch-offline-provider#readme",
+  "homepage": "https://github.com/yannbertrand/youwatch-offline-provider#readme",
   "devDependencies": {
     "mocha": "^3.2.0",
     "should": "^11.1.1"
