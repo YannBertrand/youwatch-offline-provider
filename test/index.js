@@ -38,7 +38,7 @@ describe('OfflineProvider', () => {
     });
 
     describe('#getName()', () => {
-      it('should be sync return a string', () => {
+      it('should return a string', () => {
         const name = OfflineProvider.getName();
 
         should(name).be.a.String();
@@ -54,7 +54,7 @@ describe('OfflineProvider', () => {
     });
 
     describe('#getConfigPrefix()', () => {
-      it('should be sync return a string', () => {
+      it('should return a string beginning by "providers."', () => {
         const name = OfflineProvider.getConfigPrefix();
 
         should(name).be.a.String();
