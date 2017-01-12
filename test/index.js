@@ -97,7 +97,7 @@ describe('OfflineProvider', () => {
     describe('#refreshSubscriptions(callback)', () => {
       it('should call the callback', (done) => {
         OfflineProvider.refreshSubscriptions((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         });
       });
@@ -119,7 +119,7 @@ describe('OfflineProvider', () => {
     describe('#refreshVideos(callback)', () => {
       it('should call the callback', (done) => {
         OfflineProvider.refreshVideos((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         });
       });
@@ -141,7 +141,7 @@ describe('OfflineProvider', () => {
     describe('#refreshVideos(callback)', () => {
       it('should call the callback', (done) => {
         OfflineProvider.refreshVideos((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         });
       });
@@ -151,7 +151,7 @@ describe('OfflineProvider', () => {
       it('should accept an optional channel parameter', (done) => {
         const channel = { id: 1 };
         OfflineProvider.refreshVideos((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         }, channel);
       });
@@ -173,14 +173,14 @@ describe('OfflineProvider', () => {
     describe('#getVideos(callback) with test/fixtures/empty folder', () => {
       before((done) => {
         OfflineProvider.init((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         }, emptyFolderOptions);
       });
 
       it('should return an empty array', (done) => {
         OfflineProvider.getVideos((err, videos) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           should(videos).be.an.array;
           should(videos).be.empty;
 
@@ -192,14 +192,14 @@ describe('OfflineProvider', () => {
     describe('#getVideos(callback) with test/fixtures/videos folder', () => {
       before((done) => {
         OfflineProvider.init((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         }, videoFolderOptions);
       });
 
       it('should return an array of 3 videos', (done) => {
         OfflineProvider.getVideos((err, videos) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           should(videos).be.an.array;
           should(videos).have.lengthOf(3);
 
@@ -211,7 +211,7 @@ describe('OfflineProvider', () => {
     describe('#getVideos(callback, channel) with test/fixtures/empty folder', () => {
       before((done) => {
         OfflineProvider.init((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         }, emptyFolderOptions);
       });
@@ -220,7 +220,7 @@ describe('OfflineProvider', () => {
         const channel = { id: 1 };
 
         OfflineProvider.getVideos((err, videos) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           should(videos).be.an.array;
           should(videos).be.empty;
 
@@ -232,7 +232,7 @@ describe('OfflineProvider', () => {
     describe('#getVideos(callback, channel) with test/fixtures/videos folder', () => {
       before((done) => {
         OfflineProvider.init((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         }, videoFolderOptions);
       });
@@ -241,7 +241,7 @@ describe('OfflineProvider', () => {
         const channel = { id: 1 };
 
         OfflineProvider.getVideos((err, videos) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           should(videos).be.an.array;
           should(videos).have.lengthOf(3);
 
@@ -266,7 +266,7 @@ describe('OfflineProvider', () => {
     describe('#getOlderVideos(callback)', () => {
       it('should call the callback', (done) => {
         OfflineProvider.getOlderVideos((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         });
       });
@@ -277,7 +277,7 @@ describe('OfflineProvider', () => {
         const video = { id: 1 };
 
         OfflineProvider.getOlderVideos((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         }, video);
       });
@@ -317,7 +317,7 @@ describe('OfflineProvider', () => {
         const time = '08:00';
 
         OfflineProvider.videoProgress((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         }, video, time);
       });
