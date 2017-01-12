@@ -182,7 +182,7 @@ describe('OfflineProvider', () => {
         OfflineProvider.getVideos((err, videos) => {
           should.not.exist(err);
           should(videos).be.an.Array();
-          should(videos).be.empty;
+          should(videos).be.empty();
 
           done();
         });
@@ -222,7 +222,7 @@ describe('OfflineProvider', () => {
         OfflineProvider.getVideos((err, videos) => {
           should.not.exist(err);
           should(videos).be.an.Array();
-          should(videos).be.empty;
+          should(videos).be.empty();
 
           done();
         }, channel);
