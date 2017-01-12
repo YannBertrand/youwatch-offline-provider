@@ -1,4 +1,5 @@
 const fs = require('fs');
+const isVideo = require('is-video');
 
 const utils = require('./utils');
 
@@ -52,7 +53,7 @@ module.exports = (() => {
 
       const videos = [];
 
-      files.forEach(file => {
+      files.filter(isVideo).forEach(file => {
         videos.push({
           file
         });
