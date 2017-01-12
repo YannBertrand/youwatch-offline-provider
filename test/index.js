@@ -181,7 +181,7 @@ describe('OfflineProvider', () => {
       it('should return an empty array', (done) => {
         OfflineProvider.getVideos((err, videos) => {
           should.not.exist(err);
-          should(videos).be.an.array;
+          should(videos).be.an.Array();
           should(videos).be.empty;
 
           done();
@@ -200,7 +200,7 @@ describe('OfflineProvider', () => {
       it('should return an array of 3 videos', (done) => {
         OfflineProvider.getVideos((err, videos) => {
           should.not.exist(err);
-          should(videos).be.an.array;
+          should(videos).be.an.Array();
           should(videos).have.lengthOf(3);
 
           done();
@@ -221,7 +221,7 @@ describe('OfflineProvider', () => {
 
         OfflineProvider.getVideos((err, videos) => {
           should.not.exist(err);
-          should(videos).be.an.array;
+          should(videos).be.an.Array();
           should(videos).be.empty;
 
           done();
@@ -242,7 +242,7 @@ describe('OfflineProvider', () => {
 
         OfflineProvider.getVideos((err, videos) => {
           should.not.exist(err);
-          should(videos).be.an.array;
+          should(videos).be.an.Array();
           should(videos).have.lengthOf(3);
 
           done();
