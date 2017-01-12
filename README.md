@@ -1,7 +1,7 @@
 # youwatch-offline-provider
 **Stability: 1 - Experimental**
 
-[![Build Status](https://travis-ci.org/YannBertrand/youwatch-offline-provider.svg?branch=master)](https://travis-ci.org/YannBertrand/youwatch-offline-provider)
+[![Build Status](https://travis-ci.org/yannbertrand/youwatch-offline-provider.svg?branch=master)](https://travis-ci.org/yannbertrand/youwatch-offline-provider)
 
 ## Description
-A [YouWatch](https://github.com/YannBertrand/YouWatch) offline provider
+A [YouWatch](https://github.com/yannbertrand/YouWatch) offline provider
