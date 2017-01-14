@@ -8,7 +8,7 @@ module.exports = (() => {
   let folder;
 
   function getName() { return 'offline'; }
-  function getConfigPrefix() { return 'providers.' + getName() }
+  function getConfigPrefix() { return 'providers.' + getName(); }
 
   function init(callback, options) {
     utils.testCallback(callback);
@@ -16,9 +16,9 @@ module.exports = (() => {
     utils.returnCallbackError(utils.testFunction('options.config.has', options.config.has));
     utils.returnCallbackError(utils.testFunction('options.config.get', options.config.get));
     utils.returnCallbackError(utils.testFunction('options.config.set', options.config.set));
-    utils.returnCallbackError(utils.testFunction('options.app', options.app.getPath));
+    utils.returnCallbackError(utils.testFunction('options.app.getPath', options.app.getPath));
 
-    if (!options.config.has(getConfigPrefix())) {
+    if (! options.config.has(getConfigPrefix())) {
       options.config.set(getConfigPrefix(), {
         folder: options.app.getPath('videos'),
       });
@@ -54,9 +54,7 @@ module.exports = (() => {
       const videos = [];
 
       files.filter(isVideo).forEach(file => {
-        videos.push({
-          file
-        });
+        videos.push({ file });
       });
 
       return callback(null, videos);
