@@ -16,11 +16,11 @@ module.exports = (() => {
     utils.returnCallbackError(utils.testFunction('options.config.has', options.config.has));
     utils.returnCallbackError(utils.testFunction('options.config.get', options.config.get));
     utils.returnCallbackError(utils.testFunction('options.config.set', options.config.set));
-    utils.returnCallbackError(utils.testFunction('options.app.getPath', options.app.getPath));
+    utils.returnCallbackError(utils.testString('options.app.path', options.app.path));
 
     if (! options.config.has(getConfigPrefix())) {
       options.config.set(getConfigPrefix(), {
-        folder: options.app.getPath('videos'),
+        folder: options.app.path,
       });
     }
 

@@ -17,15 +17,19 @@ const config = new Config();
 const options = {
   config,
   app: {
-    getPath: () => path.join(__dirname, 'videos')
+    path: path.join(__dirname, 'videos')
   },
 };
 
 OfflineProvider.init(function (err) {
-  if (err) // ...
+  if (err) {
+    // ...
+  }
 
   OfflineProvider.getVideos(function (err, videos) {
-    if (err) // ...
+    if (err) {
+      // ...
+    }
 
     // Here is the list of videos in ./videos/ folder
     console.log(videos);

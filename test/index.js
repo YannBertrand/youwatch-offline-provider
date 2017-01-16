@@ -10,7 +10,7 @@ const emptyFolderOptions = {
     get: () => { return path.join(__dirname, 'fixtures', 'empty') },
   },
   app: {
-    getPath: () => {},
+    path: path.join(__dirname, 'fixtures', 'empty'),
   },
 };
 
@@ -21,7 +21,7 @@ const videoFolderOptions = {
     get: () => { return path.join(__dirname, 'fixtures', 'videos') },
   },
   app: {
-    getPath: () => {},
+    path: path.join(__dirname, 'fixtures', 'videos'),
   },
 };
 
