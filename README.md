@@ -7,7 +7,7 @@
 A [YouWatch](https://github.com/yannbertrand/YouWatch) offline provider
 
 ## Usage
-```
+```js
 const OfflineProvider = require('youwatch-offline-provider');
 const path = require('path');
 const Config = require('conf');
